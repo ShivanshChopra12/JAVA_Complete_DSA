@@ -1,10 +1,15 @@
 package lec33;
 
 public class P {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+  int data=100;
+  int dataP= 10;
+  
+  public void fun() {
+	  System.out.println("fun of P");
+  }
+  
+  public void funP() {
+	System.out.println("funP of P");  
+  }
+  
 }
