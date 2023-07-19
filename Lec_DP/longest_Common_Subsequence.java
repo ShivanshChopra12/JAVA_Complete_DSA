@@ -20,6 +20,10 @@ public class longest_Common_Subsequence {
 			return 0;
 		}
 
+		if (dp[m][n] != null) {
+			return dp[m][n];
+		}
+
 		if (s1.charAt(m - 1) == s2.charAt(n - 1)) {
 			int sp = lcs(s1, s2, m - 1, n - 1);
 			return 1 + sp;
