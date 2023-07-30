@@ -16,6 +16,7 @@ public class selection_Sort {
 					min_idx = j;
 				}
 			}
+			
 		//swapping
 			if (min_idx != i) {
 				int temp = arr[i];
