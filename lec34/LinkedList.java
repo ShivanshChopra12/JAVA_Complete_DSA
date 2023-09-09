@@ -231,7 +231,57 @@ public class LinkedList {
 				}
 			}
 
-			curr = curr.next;
+			curr = after;
 		}
+		//last ke bche hue elements if k se divisible nhi h tab bhi flip krdo
+		while (!S.isEmpty()) {
+			Node temp = S.pop();
+//			add this temp at the end of new LL or ntail
+
+			if (nhead == null) {
+				nhead = temp;
+				ntail = temp;
+				ntail.next = null;
+			} else {
+				ntail.next = temp;
+				ntail = temp;
+				ntail.next = null;
+			}
+		}
+		head = nhead;
 	}
+	
+	public int lastK(int k) {
+		Node ahead = head;
+		for(int c =1; c <=k; c++) {
+			ahead = ahead.next;
+		}
+		Node behind = head;
+		while( ahead!= null) {
+			ahead =ahead.next;
+			behind = behind.next;
+		}
+		return behind.data;
+	}
+	
+	 public Node getIntersectionNode(Node headA, Node headB) {
+	        Node c1 = headA;
+	        Node c2 = headB;
+	        
+	        while(c1!=c2){
+	            c1=c1.next;
+	            c2=c2.next;
+	            
+	            if(c1==c2){return c1;} //agr dono ikhte null hojae
+	            
+	            if(c1 == null){
+	                c1 = headB; 
+	            }
+	            
+	            if(c2 == null){
+	                c2 = headA; 
+	            }
+	        }
+	        return c1;
+	    }
 }
